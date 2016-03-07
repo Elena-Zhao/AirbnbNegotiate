@@ -38,10 +38,11 @@ def getCalendar(ids, months):
             time.sleep(15)
         time.sleep(random.uniform(0.5, 8))
 
-        if(counter % 100 == 0):
-            with open('calendars/' + str(time.time())+'.json', 'w') as outfile:
+        if(counter % 3 == 0):
+            # with open('calendars/' + str(time.time())+'.json', 'w') as outfile:
+            with open('calendars/cal.json', 'w') as outfile:
                 json.dump(calendars, outfile)
-            with open('calendars/failed_ids' + str(time.time())+'.json', 'w') as outfile:
+            with open('calendars/failed_ids.json', 'w') as outfile:
                 json.dump(lost_ids, outfile)
     return
 
