@@ -1,4 +1,3 @@
-from builtins import len
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -45,7 +44,7 @@ def listings_price_var(calendars):
     return listings_var
 
 
-calendars = pd.read_json('/Users/Elena/Desktop/AirBnb/AirbnbScrape/calendars.json')
+calendars = pd.read_json('/Users/Elena/Desktop/AirBnb/Codes/calendars/1456693184.99.json')
 parsed_calendars = {}
 for i in calendars.keys():
     parsed_calendars[i] = parse_calendar(calendars[i])
@@ -53,7 +52,7 @@ for i in calendars.keys():
 num_1d = 0
 num_2d = 0
 num_3d = 0
-for i in parsed_calendars.values():
+for i in parsed_calendars.values()[5:]:
     num_1d += len(find_orphans(i, 1))
     num_2d += len(find_orphans(i, 2))
     num_3d += len(find_orphans(i, 3))
